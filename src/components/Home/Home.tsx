@@ -7,12 +7,12 @@ import {
   ListItem,
   ListItemButton,
   ListItemIcon,
-  ListItemText,
+  // ListItemText,
   Stack,
 } from "@mui/material";
 import React, { Fragment } from "react";
-import LANGAT from "../../public/assets/christina.jpg";
-import JavascriptIcon from "@mui/icons-material/Javascript";
+// import LANGAT from "../../public/assets/christina.jpg";
+// import JavascriptIcon from "@mui/icons-material/Javascript";
 import { FaPython, FaNode, FaDocker } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 const Home = () => {
