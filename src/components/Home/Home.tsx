@@ -62,8 +62,6 @@ const Home = () => {
                       .deleteAll()
                       .typeString("I am a  Aspiring Data Engineer")
                       .start()
-
-                      .typeString("I am a Full Stack Developer");
                   }}
                 />
               </Typography>

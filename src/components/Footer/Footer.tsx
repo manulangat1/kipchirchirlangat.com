@@ -1,31 +1,32 @@
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, List, ListItem, ListItemButton, ListItemText, ListItemIcon } from "@mui/material";
 import React, { Fragment } from "react";
-// import TwitterIcon from '@mui/icons-material/Twitter';
-// import LinkedInIcon from '@mui/icons-material/LinkedIn';
-// import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 const Footer = () => {
-    // const iconList = [
-    //     {
-    //         id:1,
-    //         link:'https://github.com/manulangat1',
-    //         name:'Github',
-    //         icon: <GitHubIcon />
-    //     }, 
-    //     {
-    //         id:2,
-    //         link:'https://www.linkedin.com/in/emmanuel-langat-7b547a158/',
-    //         name:'Linkdin',
-    //         icon: <LinkedInIcon />
-    //     }, 
-    //     {
-    //         id:3,
-    //         link:'https://github.com/manulangat1',
-    //         name:'Twitter',
-    //         icon: <TwitterIcon />
-    //     }, 
-    // ]
+  const onClick = (link: string) => window.open(link, "__blank");
+    const iconList = [
+        {
+            id:1,
+            link:'https://github.com/manulangat1',
+            name:'Github',
+            icon: <GitHubIcon />
+        }, 
+        {
+            id:2,
+            link:'https://www.linkedin.com/in/emmanuel-langat-7b547a158/',
+            name:'Linkdin',
+            icon: <LinkedInIcon />
+        }, 
+        {
+            id:3,
+            link:'https://github.com/manulangat1',
+            name:'Twitter',
+            icon: <TwitterIcon />
+        }, 
+    ]
 
   return (
     <Fragment>
@@ -37,6 +38,19 @@ const Footer = () => {
             Kipchirchir Langat
           </Typography>
           <p>{new Date().getFullYear()}</p>
+          <List style={{ display:'flex', flexDirection:'row', justifyContent:'center', justifySelf:'center', textAlign:'center', alignItems:'center', width:'50%', margin:'auto'}} >
+          {
+            iconList.map((icon) => (
+              <ListItem key={icon.id} disablePadding>
+                    <ListItemButton onClick={() => onClick(icon.link)}>
+                      <ListItemIcon>{icon.icon}</ListItemIcon>
+                      <ListItemText>{icon.name}</ListItemText>
+                    </ListItemButton>
+                  </ListItem>
+            ))
+          }
+          </List>
+          
         </Container>
       </footer>
     </Fragment>
