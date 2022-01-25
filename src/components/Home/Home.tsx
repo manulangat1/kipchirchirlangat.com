@@ -11,7 +11,8 @@ import {
   Stack,
 } from "@mui/material";
 import React, { Fragment } from "react";
-// import LANGAT from "../../public/assets/christina.jpg";
+import LANGAT from "../../public/assets/LANGAT.pdf";
+// src/public/assets/LANGAT.pdf
 // import JavascriptIcon from "@mui/icons-material/Javascript";
 import { Helmet } from "react-helmet";
 import { FaPython, FaNode, FaDocker } from "react-icons/fa";
@@ -88,7 +89,9 @@ const Home = () => {
                 Contact Me
               </Button>
               <Button variant="outlined" style={{ margin: "1rem" }}>
-                View Resume
+                <a href={LANGAT} style={{ textDecoration:'none', color:'#ffffff'}} target="_blank">
+                  View Resume
+                </a>
               </Button>
             </Grid>
 
