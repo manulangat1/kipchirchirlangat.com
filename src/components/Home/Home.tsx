@@ -13,13 +13,14 @@ import {
 import React, { Fragment } from "react";
 // import LANGAT from "../../public/assets/christina.jpg";
 // import JavascriptIcon from "@mui/icons-material/Javascript";
+import { Helmet } from "react-helmet";
 import { FaPython, FaNode, FaDocker } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 const Home = () => {
   const iconList = [
     {
       id: 1,
-      name: "Python", 
+      name: "Python",
       icon: <FaPython size="42px" color="#ffffff" />,
     },
     {
@@ -35,7 +36,14 @@ const Home = () => {
   ];
   return (
     <Fragment>
-      <section style={{ background: "#254e58", color:'#ffffff' }}>
+      <Helmet>
+        ‍<title>Emmanuel Kipchirchir langat</title>‍
+        <meta
+          name="description"
+          content="Software engineeer, programmer, web developer , machine learning engineer"
+        />
+      </Helmet>
+      <section style={{ background: "#254e58", color: "#ffffff" }}>
         <Container
           maxWidth="xl"
           style={{ padding: "4rem", minHeight: "40vh", background: "#254e58" }}
@@ -46,7 +54,6 @@ const Home = () => {
                 Kipchirchir Langat
               </Typography>
               <Typography variant="h5" gutterBottom>
-                  
                 <Typewriter
                   onInit={(typewriter) => {
                     typewriter
@@ -61,7 +68,7 @@ const Home = () => {
                       .pauseFor(1000)
                       .deleteAll()
                       .typeString("I am a  Aspiring Data Engineer")
-                      .start()
+                      .start();
                   }}
                 />
               </Typography>
@@ -69,12 +76,11 @@ const Home = () => {
                 {iconList.map((icon) => (
                   <List key={icon.id} disablePadding>
                     <ListItem>
-                    <ListItemButton>
-                      <ListItemIcon>{icon.icon}</ListItemIcon>
-                      {/* <ListItemText>{icon.name}</ListItemText> */}
-                    </ListItemButton>
+                      <ListItemButton>
+                        <ListItemIcon>{icon.icon}</ListItemIcon>
+                        {/* <ListItemText>{icon.name}</ListItemText> */}
+                      </ListItemButton>
                     </ListItem>
-                    
                   </List>
                 ))}
               </Stack>
