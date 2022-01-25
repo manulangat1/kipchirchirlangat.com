@@ -89,7 +89,7 @@ const Home = () => {
                 Contact Me
               </Button>
               <Button variant="outlined" style={{ margin: "1rem" }}>
-                <a href={LANGAT} style={{ textDecoration:'none', color:'#ffffff'}} target="_blank">
+                <a href={LANGAT} style={{ textDecoration:'none', color:'#ffffff'}} target="_blank" rel="noreferrer">
                   View Resume
                 </a>
               </Button>
