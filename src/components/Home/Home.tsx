@@ -73,10 +73,10 @@ const Home = () => {
                   }}
                 />
               </Typography>
-              <Stack direction="row">
+              <Stack direction="row" >
                 {iconList.map((icon) => (
                   <List key={icon.id} disablePadding>
-                    <ListItem>
+                    <ListItem disableGutters>
                       <ListItemButton>
                         <ListItemIcon>{icon.icon}</ListItemIcon>
                         {/* <ListItemText>{icon.name}</ListItemText> */}

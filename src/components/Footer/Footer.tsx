@@ -1,4 +1,4 @@
-import { Container, Typography, List, ListItem, ListItemButton, ListItemText, ListItemIcon } from "@mui/material";
+import { Container, Typography, List, ListItem, ListItemButton,  ListItemIcon } from "@mui/material";
 import React, { Fragment } from "react";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -41,10 +41,10 @@ const Footer = () => {
           <List style={{ display:'flex', flexDirection:'row', justifyContent:'center', justifySelf:'center', textAlign:'center', alignItems:'center', width:'50%', margin:'auto'}} >
           {
             iconList.map((icon) => (
-              <ListItem key={icon.id} disablePadding>
-                    <ListItemButton onClick={() => onClick(icon.link)}>
-                      <ListItemIcon>{icon.icon}</ListItemIcon>
-                      <ListItemText>{icon.name}</ListItemText>
+              <ListItem disableGutters key={icon.id} disablePadding>
+                    <ListItemButton disableGutters onClick={() => onClick(icon.link)}>
+                      <ListItemIcon >{icon.icon}</ListItemIcon>
+                      {/* <ListItemText  >{icon.name}</ListItemText> */}
                     </ListItemButton>
                   </ListItem>
             ))

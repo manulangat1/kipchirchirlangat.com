@@ -1,6 +1,5 @@
 import React , {Fragment} from 'react';
 
-import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 // import Projects from './components/Projects/Projects';
@@ -19,7 +18,7 @@ function App() {
         />
       </Helmet>
       <Navbar />
-      <section style={{ height:'100vh'}}>
+      <section style={{ height:'100vh', width:'100%'}}>
         <Home />
         {/* <Projects /> */}
         <Contact />
