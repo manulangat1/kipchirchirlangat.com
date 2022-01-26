@@ -8,6 +8,8 @@ import Footer from './components/Footer/Footer';
 import { Helmet } from "react-helmet";
 import Skills from './components/Skills/Skills';
 
+
+
 function App() {
   return (
     <Fragment>

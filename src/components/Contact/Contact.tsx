@@ -74,7 +74,7 @@ const Contact = () => {
   };
   return (
     <Fragment>
-      <section style={{ background: "#f7f7f7" }}>
+      <section id="contact" style={{ background: "#f7f7f7" }}>
         <Container maxWidth="xl" style={{ padding: "2rem" }}>
           <Grid spacing={2} container>
             <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
