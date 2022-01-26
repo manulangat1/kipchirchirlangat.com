@@ -19,15 +19,18 @@ import {
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import Snackbar from '@mui/material/Snackbar';
 
-interface stateI {
+interface stateI   {
   email: string;
   message: string;
+  open:boolean
 }
 const Contact = () => {
   const [state, setState] = useState<stateI>({
     email: "",
     message: "",
+    open: false,
   });
 
   const iconList = [
@@ -45,7 +48,7 @@ const Contact = () => {
     },
     {
       id: 3,
-      link: "https://github.com/manulangat1",
+      link: "https://twitter.com/langatmanuK",
       name: "Twitter",
       icon: <TwitterIcon />,
     },
@@ -60,13 +63,21 @@ const Contact = () => {
     event.preventDefault();
     console.log(state);
     console.log("here");
+    setState({ ...state, open:true})
+  };
+
+
+
+
+  const handleClose = () => {
+    setState({ ...state, open: false });
   };
   return (
     <Fragment>
-      <section style={{ background: "#f7f7f7" }}>
+      <section id="contact" style={{ background: "#f7f7f7" }}>
         <Container maxWidth="xl" style={{ padding: "2rem" }}>
           <Grid spacing={2} container>
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
               <Typography
                 variant="h6"
                 gutterBottom
@@ -112,9 +123,16 @@ const Contact = () => {
                   Contact me
                 </Button>
               </form>
+              <Snackbar
+                  open={state.open}
+                  autoHideDuration={6000}
+                  onClose={handleClose}
+                  message="Your message has been noted, i will be getting in touch soon"
+                  // action={action}
+          />
             </Grid>
 
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Grid item xs={12} sm={6} md={6} lg={6} xl={6} style={{ padding:'3rem'}}>
               <Typography variant="h6" gutterBottom>
                 You can also find me at my social's
               </Typography>

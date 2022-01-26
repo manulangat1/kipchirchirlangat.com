@@ -6,6 +6,9 @@ import Home from './components/Home/Home';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import { Helmet } from "react-helmet";
+import Skills from './components/Skills/Skills';
+
+
 
 function App() {
   return (
@@ -21,6 +24,7 @@ function App() {
       <section style={{ height:'100vh', width:'100%'}}>
         <Home />
         {/* <Projects /> */}
+        <Skills />
         <Contact />
         <Footer />
       </section>

@@ -50,7 +50,15 @@ const Home = () => {
           style={{ padding: "4rem", minHeight: "40vh", background: "#254e58" }}
         >
           <Grid spacing={6} container>
-            <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ padding: "1rem" }}
+            >
               <Typography variant="h3" gutterBottom>
                 Kipchirchir Langat
               </Typography>
@@ -73,7 +81,7 @@ const Home = () => {
                   }}
                 />
               </Typography>
-              <Stack direction="row" >
+              <Stack direction="row">
                 {iconList.map((icon) => (
                   <List key={icon.id} disablePadding>
                     <ListItem disableGutters>
@@ -86,10 +94,21 @@ const Home = () => {
                 ))}
               </Stack>
               <Button variant="contained" style={{ margin: "1rem" }}>
-                Contact Me
+                <a
+                  href="#contact"
+                  style={{ textDecoration: "none", color: "#ffffff" }}
+
+                >
+                  Contact Me
+                </a>
               </Button>
               <Button variant="outlined" style={{ margin: "1rem" }}>
-                <a href={LANGAT} style={{ textDecoration:'none', color:'#ffffff'}} target="_blank" rel="noreferrer">
+                <a
+                  href={LANGAT}
+                  style={{ textDecoration: "none", color: "#ffffff" }}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   View Resume
                 </a>
               </Button>
