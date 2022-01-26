@@ -22,7 +22,7 @@ const Footer = () => {
         }, 
         {
             id:3,
-            link:'https://github.com/manulangat1',
+            link:'https://twitter.com/langatmanuK',
             name:'Twitter',
             icon: <TwitterIcon />
         }, 
