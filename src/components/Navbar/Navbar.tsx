@@ -50,12 +50,37 @@ const Navbar = () => {
   // ];
   return (
     <Fragment>
-      <AppBar position="static" style={{ background:'#254e58'}}>
+      <AppBar position="static" style={{ background: "#254e58" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography variant="h6"> KIPCHIRCHIR LANGAT</Typography>
             <div style={{ flexGrow: "1" }}></div>
-            
+            <div
+              style={{ flexGrow: "1", display: "flex", flexDirection: "row" }}
+            >
+              <Typography
+                style={{ paddingRight: "1rem " }}
+                variant="h6"
+                onClick={() =>
+                  console.log(
+                    window.open("https://blog.kipchirchirlangat.com/", "_blank")
+                  )
+                }
+              >
+                Blog
+              </Typography>
+              <Typography
+                variant="h6"
+                onClick={() =>
+                  console.log(
+                    window.open("https://github.com/manulangat1", "_blank")
+                  )
+                }
+              >
+                Github
+              </Typography>
+            </div>
+
             {/* {pages.map((page) => (
               <MenuItem key={page.id} sx={{
                 display: { xs: "none", sm: "none", md: "none" },
