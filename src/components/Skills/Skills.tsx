@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import React, { Fragment } from "react";
 import { FaPython, FaNode, FaDocker, FaReact, FaCss3 } from "react-icons/fa";
-import { SiDjango, SiFlask, SiMaterialui } from "react-icons/si";
+import { SiDjango, SiFlask } from "react-icons/si";
 const Skills = () => {
   const iconList = [
     {
@@ -41,25 +41,20 @@ const Skills = () => {
       name: "ReactJs",
       icon: <FaReact size={70} color="black" />,
     },
-    {
-      id: 7,
-      name: "MaterialUi",
-      icon: <SiMaterialui size={70} color="black" />,
-    },
+    // {
+    //   id: 7,
+    //   name: "MaterialUi",
+    //   icon: < size={70} color="white" />,
+    // },
     {
       id: 8,
       name: "CSS 3",
-      icon: <FaCss3 size={70} color="black" />,
+      icon: <FaCss3 size={70} color="white" />,
     },
   ];
   return (
-    <Fragment>
-      <section
-        style={{
-          //  background: "#254e58"
-          background: "#f7f7f7",
-        }}
-      >
+    <main>
+      <section style={{ background: "#254e58" }}>
         <Container
           maxWidth="xl"
           style={{
@@ -69,7 +64,7 @@ const Skills = () => {
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
-            // color: "#f5f5f6",
+            color: "#f5f5f6",
           }}
         >
           <Typography variant="h4" gutterBottom style={{ padding: "3rem" }}>
@@ -97,7 +92,7 @@ const Skills = () => {
           </Grid>
         </Container>
       </section>
-    </Fragment>
+    </main>
   );
 };
 

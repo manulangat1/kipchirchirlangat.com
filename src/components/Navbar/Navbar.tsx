@@ -1,5 +1,6 @@
 import {
   AppBar,
+  Button,
   // Box,
   Container,
   // IconButton,
@@ -10,44 +11,11 @@ import {
   Typography,
 } from "@mui/material";
 import React, { Fragment } from "react";
+import { NavLink } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
-  // const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-  //   null
-  // );
-  // const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-  //   null
-  // );
-
-  // const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-  //   setAnchorElNav(event.currentTarget);
-  // };
-  // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
-
-  // const handleCloseNavMenu = () => {
-  //   setAnchorElNav(null);
-  // };
-
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
-  // const pages = [
-  //   {
-  //     id: 1,
-  //     page: "Home",
-  //   },
-  //   {
-  //     id: 2,
-  //     page: "Home",
-  //   },
-  //   {
-  //     id: 3,
-  //     page: "Home",
-  //   },
-  // ];
   return (
     <Fragment>
       <AppBar position="static" style={{ background: "#254e58" }}>
@@ -79,17 +47,10 @@ const Navbar = () => {
               >
                 Github
               </Typography>
+              <Button>
+                <NavLink to="/blog">Blog</NavLink>
+              </Button>
             </div>
-
-            {/* {pages.map((page) => (
-              <MenuItem key={page.id} sx={{
-                display: { xs: "none", sm: "none", md: "none" },
-              }} >
-                <Typography sx={{
-                        display: { xs: "none", sm: "none", md: "none" },
-                      }} textAlign="center">{page.page}</Typography>
-              </MenuItem>
-            ))} */}
           </Toolbar>
         </Container>
       </AppBar>
