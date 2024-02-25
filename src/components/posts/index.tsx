@@ -14,6 +14,10 @@ const Posts = () => {
   console.log(isLoading, posts);
 
   useEffect(() => {
+<<<<<<< HEAD
+=======
+    console.log("Hello world");
+>>>>>>> 097b474 (This commit introduces posts functionality)
     dispatch(getPosts());
   }, []);
   if (isLoading) {
