@@ -7,6 +7,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import { Helmet } from "react-helmet";
 import Skills from "./components/Skills/Skills";
+import Routes from "./Routes";
 
 function App() {
   return (
@@ -23,14 +24,8 @@ function App() {
           content="Software engineeer, programmer, web developer , machine learning engineer, Emmanuel Kipchirchir Langat, devsecops engineer, jenkins, AWS, Terrarom and kubbernetties expert"
         />
       </Helmet>
-      <Navbar />
-      <section style={{ height: "100vh", width: "100%" }}>
-        <Home />
-        {/* <Projects /> */}
-        <Skills />
-        <Contact />
-        <Footer />
-      </section>
+
+      <Routes />
     </Fragment>
   );
 }
