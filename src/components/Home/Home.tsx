@@ -22,17 +22,17 @@ const Home = () => {
     {
       id: 1,
       name: "Python",
-      icon: <FaPython size="42px" color="#ffffff" />,
+      icon: <FaPython size="42px" color="black" />,
     },
     {
       id: 2,
       name: "Node",
-      icon: <FaNode size="42px" color="#ffffff" />,
+      icon: <FaNode size="42px" color="black" />,
     },
     {
       id: 3,
       name: "Docker",
-      icon: <FaDocker size="42px" color="#ffffff" />,
+      icon: <FaDocker size="42px" color="black" />,
     },
   ];
   return (
@@ -44,10 +44,21 @@ const Home = () => {
           content="Software engineeer, programmer, web developer , machine learning engineer"
         />
       </Helmet>
-      <section style={{ background: "#254e58", color: "#ffffff" }}>
+      <section
+        style={
+          {
+            // background: "#254e58",
+            // color: "#ffffff",
+          }
+        }
+      >
         <Container
           maxWidth="xl"
-          style={{ padding: "4rem", minHeight: "40vh", background: "#254e58" }}
+          style={{
+            padding: "4rem",
+            minHeight: "40vh",
+            // background: "#254e58"
+          }}
         >
           <Grid spacing={6} container>
             <Grid
@@ -67,17 +78,17 @@ const Home = () => {
                   onInit={(typewriter) => {
                     typewriter
 
-                      .typeString("I am a Full Stack Developer")
+                      .typeString("I am a Senior Full Stack Developer")
 
                       .pauseFor(1000)
                       .deleteAll()
-                      .typeString("I am a  Junior Data Scientist")
-                      .start()
-
-                      .pauseFor(1000)
-                      .deleteAll()
-                      .typeString("I am a  Aspiring Data Engineer")
+                      .typeString("I am a  DevOps Engineer")
                       .start();
+
+                    // .pauseFor(1000)
+                    // .deleteAll()
+                    // .typeString("I am a  Aspiring Data Engineer")
+                    // .start();
                   }}
                 />
               </Typography>
@@ -87,7 +98,6 @@ const Home = () => {
                     <ListItem disableGutters>
                       <ListItemButton>
                         <ListItemIcon>{icon.icon}</ListItemIcon>
-                        {/* <ListItemText>{icon.name}</ListItemText> */}
                       </ListItemButton>
                     </ListItem>
                   </List>
@@ -96,8 +106,10 @@ const Home = () => {
               <Button variant="contained" style={{ margin: "1rem" }}>
                 <a
                   href="#contact"
-                  style={{ textDecoration: "none", color: "#ffffff" }}
-
+                  style={{
+                    textDecoration: "none",
+                    color: "#ffffff",
+                  }}
                 >
                   Contact Me
                 </a>
@@ -105,7 +117,10 @@ const Home = () => {
               <Button variant="outlined" style={{ margin: "1rem" }}>
                 <a
                   href={LANGAT}
-                  style={{ textDecoration: "none", color: "#ffffff" }}
+                  style={{
+                    textDecoration: "none",
+                    // , color: "#ffffff"
+                  }}
                   target="_blank"
                   rel="noreferrer"
                 >
