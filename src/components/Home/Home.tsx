@@ -45,12 +45,11 @@ const Home = () => {
         />
       </Helmet>
       <section
-        style={
-          {
-            // background: "#254e58",
-            // color: "#ffffff",
-          }
-        }
+        style={{
+          // background: "#254e58",
+          background: "#f7f7f7",
+          // color: "#ffffff",
+        }}
       >
         <Container
           maxWidth="xl"
@@ -58,6 +57,7 @@ const Home = () => {
             padding: "4rem",
             minHeight: "40vh",
             // background: "#254e58"
+            background: "#f7f7f7",
           }}
         >
           <Grid spacing={6} container>

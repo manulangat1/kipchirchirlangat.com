@@ -55,11 +55,10 @@ const Skills = () => {
   return (
     <Fragment>
       <section
-        style={
-          {
-            //  background: "#254e58"
-          }
-        }
+        style={{
+          //  background: "#254e58"
+          background: "#f7f7f7",
+        }}
       >
         <Container
           maxWidth="xl"

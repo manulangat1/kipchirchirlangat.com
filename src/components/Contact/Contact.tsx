@@ -19,12 +19,12 @@ import {
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import Snackbar from '@mui/material/Snackbar';
+import Snackbar from "@mui/material/Snackbar";
 
-interface stateI   {
+interface stateI {
   email: string;
   message: string;
-  open:boolean
+  open: boolean;
 }
 const Contact = () => {
   const [state, setState] = useState<stateI>({
@@ -56,18 +56,12 @@ const Contact = () => {
   const onClick = (link: string) => window.open(link, "__blank");
 
   const onChange = (event: any) => {
-    console.log(event.target.value);
     setState({ ...state, [event.target.name]: event.target.value });
   };
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    console.log(state);
-    console.log("here");
-    setState({ ...state, open:true})
+    setState({ ...state, open: true });
   };
-
-
-
 
   const handleClose = () => {
     setState({ ...state, open: false });
@@ -124,15 +118,23 @@ const Contact = () => {
                 </Button>
               </form>
               <Snackbar
-                  open={state.open}
-                  autoHideDuration={6000}
-                  onClose={handleClose}
-                  message="Your message has been noted, i will be getting in touch soon"
-                  // action={action}
-          />
+                open={state.open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+                message="Your message has been noted, i will be getting in touch soon"
+                // action={action}
+              />
             </Grid>
 
-            <Grid item xs={12} sm={6} md={6} lg={6} xl={6} style={{ padding:'3rem'}}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={6}
+              lg={6}
+              xl={6}
+              style={{ padding: "3rem" }}
+            >
               <Typography variant="h6" gutterBottom>
                 You can also find me at my social's
               </Typography>
