@@ -14,7 +14,6 @@ const Posts = () => {
   console.log(isLoading, posts);
 
   useEffect(() => {
-    console.log("Hello world");
     dispatch(getPosts());
   }, []);
   if (isLoading) {

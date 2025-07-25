@@ -21,7 +21,10 @@ const Navbar = () => {
       <AppBar position="static" style={{ background: "#254e58" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography variant="h6"> KIPCHIRCHIR LANGAT</Typography>
+            <NavLink to="/">
+              <Typography variant="h6"> KIPCHIRCHIR LANGAT</Typography>
+            </NavLink>
+
             <div style={{ flexGrow: "1" }}></div>
             <div
               style={{ flexGrow: "1", display: "flex", flexDirection: "row" }}
