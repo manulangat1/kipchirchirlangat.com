@@ -7,13 +7,11 @@ import {
   ListItem,
   ListItemButton,
   ListItemIcon,
-  // ListItemText,
   Stack,
 } from "@mui/material";
 import React, { Fragment } from "react";
-import LANGAT from "../../public/assets/LANGAT.pdf";
-// src/public/assets/LANGAT.pdf
-// import JavascriptIcon from "@mui/icons-material/Javascript";
+// import LANGAT from "../../public/assets/LANGAT.pdf";
+import LANGAT from "../../public/assets/EMMANUEL_LANGAT_CV.pdf";
 import { Helmet } from "react-helmet";
 import { FaPython, FaNode, FaDocker } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
@@ -84,11 +82,6 @@ const Home = () => {
                       .deleteAll()
                       .typeString("I am a  DevOps Engineer")
                       .start();
-
-                    // .pauseFor(1000)
-                    // .deleteAll()
-                    // .typeString("I am a  Aspiring Data Engineer")
-                    // .start();
                   }}
                 />
               </Typography>

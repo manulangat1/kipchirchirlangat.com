@@ -43,7 +43,7 @@ const Contact = () => {
     {
       id: 2,
       link: "https://www.linkedin.com/in/emmanuel-langat-7b547a158/",
-      name: "Linkdin",
+      name: "Linkedin",
       icon: <LinkedInIcon />,
     },
     {
