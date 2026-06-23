@@ -6,10 +6,10 @@ import Footer from "./components/Footer/Footer";
 
 function Dashboard() {
   return (
-    <section style={{ height: "100vh", width: "100%" }}>
+    <section style={{ height: "100vh", maxWidth: "100%" }}>
       <Home />
-      <Skills />
-      <Contact />
+      {/* <Skills /> */}
+      {/* <Contact /> */}
       <Footer />
     </section>
   );

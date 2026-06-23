@@ -36,33 +36,7 @@ const PostDetail = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <section>
-          <h2>{post?.title}</h2>
-          <p>{post?.content}</p>
-
-          {/* <ReactMarkdown
-            remarkPlugins={[[gfm, { singleTilde: false }]]}
-            rehypePlugins={[rehypeRaw]}
-            children={post.content}
-            components={{
-              code({ node, inline, className, children, ...props }) {
-                const match = /language-(\w+)/.exec(className || "");
-                return !inline && match ? (
-                  <SyntaxHighlighter
-                    children={String(children).replace(/\n$/, "")}
-                    style={materialDark}
-                    language={match[1]}
-                    PreTag="div"
-                  />
-                ) : (
-                  <code className={className} {...props}>
-                    {children}
-                  </code>
-                );
-              },
-            }}
-          /> */}
-
+        <section className="basicContainer">
           <ReactMarkdown
             children={post?.content}
             components={{
@@ -77,20 +51,45 @@ const PostDetail = () => {
                     PreTag="div"
                   />
                 ) : (
-                  // <SyntaxHighlighter
-                  //   {...rest}
-                  //   PreTag="div"
-                  //   children={String(children).replace(/\n$/, "")}
-                  //   language={match[1]}
-                  //   style={materialDark}
-                  // />
+                  <code {...rest} className={className}>
+                    {children}
+                  </code>
+                );
+              },
+
+              img({ node, ...props }) {
+                return (
+                  <img
+                    {...props}
+                    style={{ maxWidth: "100%", borderRadius: "8px" }}
+                    alt={props.alt}
+                  />
+                );
+              },
+            }}
+          />
+
+          {/* <ReactMarkdown
+            children={post?.content}
+            components={{
+              code(props) {
+                const { children, className, node, ...rest } = props;
+                const match = /language-(\w+)/.exec(className || "");
+                return match ? (
+                  <SyntaxHighlighter
+                    children={String(children).replace(/\n$/, "")}
+                    style={materialDark}
+                    language={match[1]}
+                    PreTag="div"
+                  />
+                ) : (
                   <code {...rest} className={className}>
                     {children}
                   </code>
                 );
               },
             }}
-          />
+          /> */}
         </section>
       )}
     </main>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { getPosts } from "../../redux/posts/slice";
-import { List, ListItem, Skeleton } from "@mui/material";
+import { List, ListItem, Skeleton, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import Loading from "../Reusable/Loading";
@@ -14,10 +14,7 @@ const Posts = () => {
   console.log(isLoading, posts);
 
   useEffect(() => {
-<<<<<<< HEAD
-=======
     console.log("Hello world");
->>>>>>> 097b474 (This commit introduces posts functionality)
     dispatch(getPosts());
   }, []);
   if (isLoading) {
@@ -46,15 +43,16 @@ const Posts = () => {
                 alignItems: "flex-start",
               }}
             >
-              <Link to={`/posts/${post.id}`}>
-                <p>{post.title} </p>
+              <div className="postList">
+                <Link className="postLink" to={`/posts/${post.id}`}>
+                  <Typography variant="h5">{post.title}</Typography>
+                </Link>
                 <p>
-                  Published at{" "}
+                  {/* Published at{" "} */}
                   {moment(post.created_at).format("MMMM Do YYYY, h:mm:ss a")}
                 </p>
-              </Link>
-
-              <hr></hr>
+              </div>
+              {/* <hr></hr> */}
             </ListItem>
           ))}
         </List>

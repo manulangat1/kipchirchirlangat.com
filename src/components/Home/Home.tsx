@@ -10,7 +10,6 @@ import {
   Stack,
 } from "@mui/material";
 import React, { Fragment } from "react";
-// import LANGAT from "../../public/assets/LANGAT.pdf";
 import LANGAT from "../../public/assets/EMMANUEL_LANGAT_CV.pdf";
 import { Helmet } from "react-helmet";
 import { FaPython, FaNode, FaDocker } from "react-icons/fa";
@@ -44,9 +43,7 @@ const Home = () => {
       </Helmet>
       <section
         style={{
-          // background: "#254e58",
           background: "#f7f7f7",
-          // color: "#ffffff",
         }}
       >
         <Container
@@ -54,7 +51,6 @@ const Home = () => {
           style={{
             padding: "4rem",
             minHeight: "40vh",
-            // background: "#254e58"
             background: "#f7f7f7",
           }}
         >
