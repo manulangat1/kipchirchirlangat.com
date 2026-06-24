@@ -1,99 +1,42 @@
-import {
-  AppBar,
-  // Box,
-  Container,
-  // IconButton,
-  // Menu,
-  // MenuItem,
-  // MenuList,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import React, { Fragment } from "react";
-// import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "../../App.css";
 
 const Navbar = () => {
-  // const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-  //   null
-  // );
-  // const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-  //   null
-  // );
-
-  // const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-  //   setAnchorElNav(event.currentTarget);
-  // };
-  // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
-
-  // const handleCloseNavMenu = () => {
-  //   setAnchorElNav(null);
-  // };
-
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
-  // const pages = [
-  //   {
-  //     id: 1,
-  //     page: "Home",
-  //   },
-  //   {
-  //     id: 2,
-  //     page: "Home",
-  //   },
-  //   {
-  //     id: 3,
-  //     page: "Home",
-  //   },
-  // ];
   return (
-    <Fragment>
-      <AppBar position="static" style={{ background: "#254e58" }}>
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Typography variant="h6"> KIPCHIRCHIR LANGAT</Typography>
-            <div style={{ flexGrow: "1" }}></div>
-            <div
-              style={{ flexGrow: "1", display: "flex", flexDirection: "row" }}
-            >
-              <Typography
-                style={{ paddingRight: "1rem " }}
-                variant="h6"
-                onClick={() =>
-                  console.log(
-                    window.open("https://blog.kipchirchirlangat.com/", "_blank")
-                  )
-                }
-              >
-                Blog
+    <AppBar
+      position="static"
+      sx={{
+        background: "rgb(15 23 42)",
+        boxShadow: "none",
+      }}
+      className="background-color site-header"
+    >
+      <Container maxWidth={false} className="site-container">
+        <Toolbar disableGutters className="site-navbar">
+          <NavLink className="navLink brand-link" to="/">
+            <Box className="brand-mark" aria-hidden="true">
+              KL
+            </Box>
+            <Box>
+              <Typography component="span" className="brand-name">
+                Kipchirchir Langat
               </Typography>
-              <Typography
-                variant="h6"
-                onClick={() =>
-                  console.log(
-                    window.open("https://github.com/manulangat1", "_blank")
-                  )
-                }
-              >
-                Github
+              <Typography component="span" className="brand-role">
+                Software Engineer
               </Typography>
-            </div>
+            </Box>
+          </NavLink>
 
-            {/* {pages.map((page) => (
-              <MenuItem key={page.id} sx={{
-                display: { xs: "none", sm: "none", md: "none" },
-              }} >
-                <Typography sx={{
-                        display: { xs: "none", sm: "none", md: "none" },
-                      }} textAlign="center">{page.page}</Typography>
-              </MenuItem>
-            ))} */}
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </Fragment>
+          <Box component="nav" className="nav-menu" aria-label="Primary">
+            <NavLink className="navLink nav-menu-link blog-nav-link" to="/blog">
+              Blog
+            </NavLink>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
 

@@ -1,29 +1,30 @@
 import {
+  Box,
   Container,
+  Link as MuiLink,
+  Stack,
   Typography,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
 } from "@mui/material";
-import React, { Fragment } from "react";
+import React from "react";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import "../../App.css";
 
 const Footer = () => {
-  const onClick = (link: string) => window.open(link, "__blank");
+  const currentYear = new Date().getFullYear();
+
   const iconList = [
     {
       id: 1,
       link: "https://github.com/manulangat1",
-      name: "Github",
+      name: "GitHub",
       icon: <GitHubIcon />,
     },
     {
       id: 2,
       link: "https://www.linkedin.com/in/emmanuel-langat/",
-      name: "Linkdin",
+      name: "LinkedIn",
       icon: <LinkedInIcon />,
     },
     {
@@ -35,46 +36,43 @@ const Footer = () => {
   ];
 
   return (
-    <Fragment>
-      <footer
-        style={{
-          textAlign: "center",
-          padding: "3rem",
-          background: "#2f4454",
-          color: "#ffffff",
-        }}
-      >
-        <Container maxWidth="xl">
-          <Typography variant="h6" gutterBottom>
-            Kipchirchir Langat
-          </Typography>
-          <p>{new Date().getFullYear()}</p>
-          <List
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              justifySelf: "center",
-              textAlign: "center",
-              alignItems: "center",
-              width: "50%",
-              margin: "auto",
-            }}
+    <Box component="footer" className="footer">
+      <Container maxWidth={false} className="site-container">
+        <Stack className="footer-content">
+          <Box>
+            <Typography variant="h6" component="h2" className="footer-title">
+              On the web
+            </Typography>
+            <Typography variant="body2" className="footer-copy">
+              © {currentYear} Emmanuel Kipchirchir Langat
+            </Typography>
+          </Box>
+
+          <Stack
+            component="nav"
+            className="footer-list"
+            direction="row"
+            aria-label="Social links"
           >
-            {iconList.map((icon) => (
-              <ListItem disableGutters key={icon.id} disablePadding>
-                <ListItemButton
-                  disableGutters
-                  onClick={() => onClick(icon.link)}
-                >
-                  <ListItemIcon>{icon.icon}</ListItemIcon>
-                </ListItemButton>
-              </ListItem>
+            {iconList.map((item) => (
+              <MuiLink
+                key={item.id}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-link"
+                aria-label={`Open ${item.name} profile`}
+              >
+                <span className="footer-icon" aria-hidden="true">
+                  {item.icon}
+                </span>
+                <span>{item.name}</span>
+              </MuiLink>
             ))}
-          </List>
-        </Container>
-      </footer>
-    </Fragment>
+          </Stack>
+        </Stack>
+      </Container>
+    </Box>
   );
 };
 
