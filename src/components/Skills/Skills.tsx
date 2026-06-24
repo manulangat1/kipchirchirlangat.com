@@ -41,11 +41,7 @@ const Skills = () => {
       name: "ReactJs",
       icon: <FaReact size={70} color="black" />,
     },
-    // {
-    //   id: 7,
-    //   name: "MaterialUi",
-    //   icon: < size={70} color="white" />,
-    // },
+
     {
       id: 8,
       name: "CSS 3",
@@ -54,7 +50,9 @@ const Skills = () => {
   ];
   return (
     <main>
-      <section style={{ background: "#254e58" }}>
+      <section
+      // style={{ background: "#254e58" }}
+      >
         <Container
           maxWidth="xl"
           style={{

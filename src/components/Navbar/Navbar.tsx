@@ -1,32 +1,42 @@
-import { AppBar, Button, Container, Toolbar, Typography } from "@mui/material";
-import React, { Fragment } from "react";
+import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import "../../App.css";
 
 const Navbar = () => {
   return (
-    <Fragment>
-      <AppBar position="static" style={{ background: "#254e58" }}>
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <NavLink className="navLink" to="/">
-              <Typography variant="h6"> KIPCHIRCHIR LANGAT</Typography>
-            </NavLink>
-
-            <div style={{ flexGrow: "1" }}></div>
-            <div
-              style={{ flexGrow: "1", display: "flex", flexDirection: "row" }}
-            >
-              <Typography variant="h6">
-                <NavLink className="navLink" to="/blog">
-                  Blog
-                </NavLink>
+    <AppBar
+      position="static"
+      sx={{
+        background: "rgb(15 23 42)",
+        boxShadow: "none",
+      }}
+      className="background-color site-header"
+    >
+      <Container maxWidth={false} className="site-container">
+        <Toolbar disableGutters className="site-navbar">
+          <NavLink className="navLink brand-link" to="/">
+            <Box className="brand-mark" aria-hidden="true">
+              KL
+            </Box>
+            <Box>
+              <Typography component="span" className="brand-name">
+                Kipchirchir Langat
               </Typography>
-            </div>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </Fragment>
+              <Typography component="span" className="brand-role">
+                Software Engineer
+              </Typography>
+            </Box>
+          </NavLink>
+
+          <Box component="nav" className="nav-menu" aria-label="Primary">
+            <NavLink className="navLink nav-menu-link blog-nav-link" to="/blog">
+              Blog
+            </NavLink>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
 

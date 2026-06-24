@@ -1,142 +1,137 @@
 import {
+  Box,
   Button,
   Container,
   Grid,
-  Typography,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
+  Link,
   Stack,
+  Typography,
 } from "@mui/material";
 import React, { Fragment } from "react";
-import LANGAT from "../../public/assets/EMMANUEL_LANGAT_CV.pdf";
 import { Helmet } from "react-helmet";
-import { FaPython, FaNode, FaDocker } from "react-icons/fa";
-import Typewriter from "typewriter-effect";
+import { FaBookOpen, FaCode, FaTools } from "react-icons/fa";
+import LANGAT from "../../public/assets/EMMANUEL_LANGAT_CV.pdf";
+import "../../App.css";
+
 const Home = () => {
-  const iconList = [
+  const workItems = [
     {
       id: 1,
-      name: "Python",
-      icon: <FaPython size="42px" color="black" />,
+      icon: <FaCode />,
+      text: "Maintaining and refactoring a large legacy codebase while writing new features.",
     },
     {
       id: 2,
-      name: "Node",
-      icon: <FaNode size="42px" color="black" />,
+      icon: <FaTools />,
+      text: "Building tools for automation.",
     },
     {
       id: 3,
-      name: "Docker",
-      icon: <FaDocker size="42px" color="black" />,
+      icon: <FaBookOpen />,
+      text: "Learning computer science fundamentals, system design, and documenting the journey.",
     },
   ];
+
   return (
     <Fragment>
       <Helmet>
-        ‍<title>Emmanuel Kipchirchir langat</title>‍
+        <title>Emmanuel Kipchirchir Langat</title>
         <meta
           name="description"
-          content="Software engineeer, programmer, web developer , machine learning engineer"
+          content="Software engineer building automation tools, learning system design, and writing about software engineering."
         />
       </Helmet>
-      <section
-        style={{
-          background: "#f7f7f7",
-        }}
-      >
-        <Container
-          maxWidth="xl"
-          style={{
-            padding: "4rem",
-            minHeight: "40vh",
-            background: "#f7f7f7",
-          }}
-        >
-          <Grid spacing={6} container>
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={6}
-              lg={6}
-              xl={6}
-              style={{ padding: "1rem" }}
-            >
-              <Typography variant="h3" gutterBottom>
-                Kipchirchir Langat
-              </Typography>
-              <Typography variant="h5" gutterBottom>
-                <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter
 
-                      .typeString("I am a Senior Full Stack Developer")
+      <Box component="section" className="home-hero">
+        <Container maxWidth={false} className="site-container">
+          <Grid container className="home-hero-grid">
+            <Grid item xs={12}>
+              <Stack className="home-copy">
+                <Typography component="p" className="home-intro">
+                  I am a software engineer with a wide range of skills,
+                  constantly learning something new every day. I enjoy turning
+                  complex problems into simple, beautiful and intuitive
+                  experiences.
+                </Typography>
 
-                      .pauseFor(1000)
-                      .deleteAll()
-                      .typeString("I am a  DevOps Engineer")
-                      .start();
+                {/* <Typography component="p" className="home-paragraph">
+                  I am currently working on{" "}
+                  <Link
+                    href="https://github.com/b0nbon1/stratal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="home-inline-link"
+                  >
+                    Stratal.io
+                  </Link>
+                  , an automation tool for everyone.
+                </Typography> */}
 
-                    // .pauseFor(1000)
-                    // .deleteAll()
-                    // .typeString("I am a  Aspiring Data Engineer")
-                    // .start();
-                  }}
-                />
-              </Typography>
-              <Stack direction="row">
-                {iconList.map((icon) => (
-                  <List key={icon.id} disablePadding>
-                    <ListItem disableGutters>
-                      <ListItemButton>
-                        <ListItemIcon>{icon.icon}</ListItemIcon>
-                      </ListItemButton>
-                    </ListItem>
-                  </List>
-                ))}
+                <Box className="home-work-panel">
+                  <Typography component="h2" className="home-section-title">
+                    My current day-to-day at work involves:
+                  </Typography>
+                  <Stack component="ul" className="home-work-list">
+                    {workItems.map((item) => (
+                      <Box
+                        component="li"
+                        className="home-work-item"
+                        key={item.id}
+                      >
+                        <span className="home-work-icon" aria-hidden="true">
+                          {item.icon}
+                        </span>
+                        <span>{item.text}</span>
+                      </Box>
+                    ))}
+                  </Stack>
+                </Box>
+
+                <Typography component="p" className="home-paragraph">
+                  You can view my resume to see more about my professional
+                  career so far.
+                </Typography>
+
+                <Typography component="p" className="home-paragraph">
+                  Sometimes I{" "}
+                  <Link
+                    href="https://kipchirchirlangat.com/blog"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="home-inline-link"
+                  >
+                    write
+                  </Link>{" "}
+                  about stuff I have learned, personal projects, and anything
+                  else I find interesting.
+                </Typography>
+
+                <Stack className="home-actions" direction="row">
+                  <Button
+                    href={LANGAT}
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="contained"
+                    className="home-primary-action"
+                  >
+                    View Resume
+                  </Button>
+                  {/* <Button
+                    href="https://github.com/b0nbon1/stratal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="outlined"
+                    className="home-secondary-action"
+                    startIcon={<FaGithub />}
+                  >
+                    Stratal.io
+                  </Button> */}
+                </Stack>
               </Stack>
-              <Button variant="contained" style={{ margin: "1rem" }}>
-                <a
-                  href="#contact"
-                  style={{
-                    textDecoration: "none",
-                    color: "#ffffff",
-                  }}
-                >
-                  Contact Me
-                </a>
-              </Button>
-              <Button variant="outlined" style={{ margin: "1rem" }}>
-                <a
-                  href={LANGAT}
-                  style={{
-                    textDecoration: "none",
-                    // , color: "#ffffff"
-                  }}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View Resume
-                </a>
-              </Button>
-            </Grid>
-
-            <Grid item sm={6} md={6} lg={6} xl={6}>
-              <img
-                src="https://i.pinimg.com/originals/f1/e7/34/f1e734f9cade86fe737a9aa404ad5677.gif"
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "400px",
-                  borderRadius: "10px",
-                }}
-                alt="person coding"
-              />
             </Grid>
           </Grid>
         </Container>
-      </section>
+      </Box>
     </Fragment>
   );
 };

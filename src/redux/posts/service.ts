@@ -8,9 +8,7 @@ const getPosts = async () => {
 };
 
 const getPostsById = async (id: string) => {
-  const response = await axios.get(
-    BASE_URL + "/blog/v1/posts/free/" + `${id}/`,
-  );
+  const response = await axios.get(`${BASE_URL}/blog/v1/posts/free/${id}/`);
   return response.data;
 };
 export const postAPIService = {
